@@ -1,9 +1,9 @@
 <script>
 import FormComponent from './FormComponent.vue'
-import ListPatients from './ListPatients.vue'
+import CardPatients from './CardPatients.vue'
 export default {
   name: 'AdminCitas',
-  components: { FormComponent, ListPatients },
+  components: { FormComponent, CardPatients },
   data() {
     return {
       pacientes: [],
@@ -16,9 +16,6 @@ export default {
     },
     EliminarPaciente(idx) {
       this.pacientes.splice(idx, 1)
-    },
-    actualizarForm(completo) {
-      this.isFormComplete = completo
     }
   }
 }
@@ -26,10 +23,12 @@ export default {
 <template>
   <h1>Citas Medicas</h1>
   <FormComponent @enviar-paciente="agregarPaciente" />
+  <!-- directiva v-show para mostrar el mensaje si el array pacientes está vacío -->
   <p class="info" v-show="pacientes.length === 0">Aún no hay consultas registradas</p>
 
   <div class="container">
-    <ListPatients :listaPacientes="pacientes" @eliminar-paciente="EliminarPaciente" />
+    <!-- aqui se mostratán las card de cada paciente -->
+    <CardPatients :listaPacientes="pacientes" @eliminar-paciente="EliminarPaciente" />
   </div>
 </template>
 <style>

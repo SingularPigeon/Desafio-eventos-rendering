@@ -3,6 +3,7 @@
 export default {
   name: 'FormComponent',
   data() {
+    // función que retorna los datos ingresados
     return {
       paciente: '',
       fecha: '',
@@ -13,7 +14,7 @@ export default {
   },
   methods: {
     submitForm() {
-      if (!this.paciente.trim() || !this.motivo.trim()) return
+      // Función que recoge los datos ingresado y los emite
       this.$emit('enviar-paciente', {
         paciente: this.paciente.trim(),
         fecha: this.fecha,
@@ -21,6 +22,7 @@ export default {
         gravedad: this.gravedad,
         motivo: this.motivo.trim()
       })
+      // Limpia los campos del formulario luego cada emisión de datos
       this.paciente = ''
       this.fecha = ''
       this.hora = ''
@@ -28,6 +30,7 @@ export default {
       this.motivo = ''
     },
     isFormComplete() {
+      // metodo que activa el botón 'agregar' si se han completado todos los campos
       return this.paciente.trim() && this.fecha && this.hora && this.gravedad && this.motivo.trim()
     }
   }
@@ -36,6 +39,7 @@ export default {
 
 <template>
   <form @submit.prevent="submitForm">
+    <!--previene el comportamiento por defecto de submit-->
     <div class="form-container">
       <div class="form-group">
         <label for="paciente" :class="{ vacio: !paciente }">Paciente</label>
@@ -97,7 +101,7 @@ form {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 10px;
-  background-color: #fafafa;
+  background-color: #f0f0f0;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.144);
 }
 .form-container {
@@ -128,11 +132,13 @@ form {
 .btn--agregar:hover {
   background-color: #58c15e;
 }
+
 form label {
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-width: 150px; /* Ajusta esto según sea necesario */
+  min-width: 150px;
+  font-weight: 700;
 }
 
 input[type='text'],

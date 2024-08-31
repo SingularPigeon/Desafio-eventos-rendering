@@ -1,13 +1,16 @@
+// Componente que crea las card de los pacientes ingresados en el formulario
 <script>
 export default {
-  name: 'ListPatients',
+  name: 'CardPatients',
   props: {
+    // recibe el array con todos los pacientes ingresados
     listaPacientes: {
       type: Array,
       required: true
     }
   },
   methods: {
+    // metodo que toma el value de gravedad para retornar la clase css basado en el nivel de gravedad
     getColorClass(gravedad) {
       const gravedadClase = {
         Baja: 'baja',
@@ -20,6 +23,7 @@ export default {
 }
 </script>
 <template>
+  <!-- iteración para renderizar la card de cada paciente ingresado -->
   <div
     v-for="(paciente, idx) in listaPacientes"
     :key="idx"
@@ -42,6 +46,7 @@ export default {
     </button>
   </div>
 </template>
+
 <style scoped>
 .card {
   width: 18rem;
@@ -80,14 +85,14 @@ hr {
 
 /* Colores según la gravedad */
 .baja {
-  background-color: #b0f2c0; /* Verde claro */
+  background-color: #b0f2c0;
 }
 
 .media {
-  background-color: #f8e4a5; /* Amarillo claro */
+  background-color: #f8e4a5;
 }
 
 .alta {
-  background-color: #f8abb2; /* Rojo claro */
+  background-color: #f8abb2;
 }
 </style>

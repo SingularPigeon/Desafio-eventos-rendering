@@ -1,35 +1,24 @@
-# desafio-eventos-renderizacion
+# Desafio Eventos-Renderizacion
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicar conocimientos del manejo de eventos y reutilización de
+componentes Vue Js, en la creación de un pequeño administrador de citas médicas.
+El sistema debe permitir la creación de card de cita de cada paciente y su eliminación.
+Cada card toma el color de la gravedad con la que el paciente es ingresado (baja, media y alta gravedad).
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![](public/preview-citas.png)
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Requisitos
 
-## Project Setup
+- **VueJs**
+- **Google Fonts**
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+### Autores
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- **Desarolladora:[Paloma Rivera](https://github.com/**SingularPigeon)\*\*
+- **Diseño: [Bootcamp Desafío Latam](desafiolatam.com)**
